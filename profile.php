@@ -17,10 +17,10 @@
     <div class="navbar">
     <table border= "1" cellpadding="0" cellspacing="10px">
         <tr>
-            <td><a href= "index.html">home</a></td>
-            <td><a href= "profile.html">profile</a></td>
-            <td><a href= "contact.html">contact</a></td>
-            <td><a href= "data-mahasiswa.html">data mahasiswa</a></td>
+            <td><a href= "index.php">home</a></td>
+            <td><a href= "profile.php">profile</a></td>
+            <td><a href= "contact.php">contact</a></td>
+            <td><a href= "data-mahasiswa.php">data mahasiswa</a></td>
         </tr>
     </table>
     </div>
