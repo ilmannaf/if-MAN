@@ -1,0 +1,119 @@
+/* Reset sederhana */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    padding: 20px;
+}
+
+/* Judul */
+h1{
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+h2{
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+/* Garis */
+hr{
+    margin: 15px 0;
+}
+
+/* Menu Navigasi */
+table:first-of-type{
+    margin: 15px auto;
+    border-collapse: collapse;
+}
+
+table:first-of-type td{
+    padding: 10px 20px;
+    background-color: #0d6efd;
+    text-align: center;
+}
+
+table:first-of-type a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table:first-of-type td:hover{
+    background-color: #084298;
+}
+
+/* Tombol */
+button{
+    background-color: #198754;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+button:hover{
+    background-color: #146c43;
+}
+
+/* Tabel Data Mahasiswa */
+table{
+    border-collapse: collapse;
+}
+
+table:nth-of-type(2){
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+}
+
+table:nth-of-type(2) th{
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px;
+}
+
+table:nth-of-type(2) td{
+    padding: 10px;
+    text-align: center;
+}
+
+table:nth-of-type(2) tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+table:nth-of-type(2) tr:hover{
+    background-color: #dbeafe;
+}
+
+/* Foto Mahasiswa */
+img{
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Tabel kedua */
+table:last-of-type{
+    margin-top: 20px;
+    background-color: white;
+}
+
+table:last-of-type th{
+    background-color: #6c757d;
+    color: white;
+    padding: 10px;
+}
+
+table:last-of-type td{
+    padding: 10px;
+    text-align: center;
+}
