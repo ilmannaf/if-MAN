@@ -1,6 +1,6 @@
 <?php
 
-$connection = mysqli_connect("localhost", "root", "root", "if_man");
+/*$connection = mysqli_connect("localhost", "root", "root", "if_man");
 if ($connection) {
     echo"koneksi berhasil";
     $query = "SELECT * FROM mahasiswa";
@@ -12,7 +12,16 @@ if ($connection) {
     ///mysqli_fetch_row
 
     
-}
+    
+}*/
+
+    require 'fungsi.php';
+    $qmahasiswa = "SELECT * FROM mahasiswa";
+    $mahasiswas = tampildata($qmahasiswa);
+
+
+
+
 ?>
 
 
@@ -55,14 +64,14 @@ if ($connection) {
  
     <?php 
     $i = 1;
-    while($mhs = mysqli_fetch_assoc($result)) : 
+    foreach ($mahasiswas as $mhs) {
     ?>
     <tr>
         <td align="center"><?php echo $i++; ?></td>
         <td align="center"><?= $mhs['nama']; ?></td>
         <td align="center"><?= $mhs['nim']; ?></td>
         <td align="center">
-            <img src="asset/images/ambarus.jpg" width="70">
+        <img src="asset/images/ambarus.jpg" width="70">
         </td>
         <td align="center"><?= $mhs['jurusan']; ?></td>
         <td align="center"><?= $mhs['email']; ?></td>
@@ -72,7 +81,7 @@ if ($connection) {
         <a href="deletedata.php?id=<?= $mhs['id']; ?>">Delete</a>
         </td>
     </tr>
-    <?php endwhile; ?>
+  <?php } ?>
 </table>
     <hr>
     <table border="1" cellpadding="5" cellspacing="0">
