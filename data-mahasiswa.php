@@ -70,15 +70,13 @@ if ($connection) {
         <td align="center"><?php echo $i++; ?></td>
         <td align="center"><?= $mhs['nama']; ?></td>
         <td align="center"><?= $mhs['nim']; ?></td>
-        <td align="center">
-        <img src="asset/images/ambarus.jpg" width="70">
-        </td>
         <td align="center"><?= $mhs['jurusan']; ?></td>
         <td align="center"><?= $mhs['email']; ?></td>
         <td align="center"><?= $mhs['no_hp']; ?></td>
+        <td align="center"><img src="asset/images/<?= $mhs['foto']; ?>" width="70"></td>
         <td>
-        <a href="editdata.php?id=<?= $mhs['id']; ?>">Edit</a> |
-        <a href="deletedata.php?id=<?= $mhs['id']; ?>">Delete</a>
+        <a href="editdata.php?id=<?= $mhs['id']; ?>"><button>EDIT</button></a> |
+        <a href="deletedata.php?id=<?= $mhs['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><button>DELETE</button></a>
         </td>
     </tr>
   <?php } ?>
