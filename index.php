@@ -21,6 +21,7 @@
             <td><a href= "profile.php">profile</a></td>
             <td><a href= "contact.php">contact</a></td>
             <td><a href= "data-mahasiswa.php">data mahasiswa</a></td>
+            <td><a href= "login.php">login</a></td>
         </tr>
     </table>
     </div>
