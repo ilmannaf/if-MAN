@@ -73,6 +73,26 @@ function editdata($data, $id)
     return mysqli_affected_rows($koneksi);
 }
 
+function login($data) {
+    global $koneksi;
+
+    $username = $data["username"];
+    $password = $data["password"];
+
+    $query = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($koneksi, $query);
+
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])) {
+            $_SESSION["login"] = true;
+            $_SESSION["username"] = $row["username"];
+            return true;
+        }
+    }
+    return false;
+}
+
 function register($data) {
     global $koneksi;
 
@@ -80,13 +100,20 @@ function register($data) {
     $password1 = mysqli_real_escape_string($koneksi, $data["password1"]);
     $password2 = mysqli_real_escape_string($koneksi, $data["password2"]);
 
-// cek username sudah ada atau belum
-$queryrow = "SELECT username FROM user WHERE username = '$username'";
-$result = mysqli_query($koneksi, $queryrow);
-    // cek konfirmasi password
+// cek konfirmasi password
     if ($password1 !== $password2) {
         echo "<script>
                 alert('konfirmasi password tidak sesuai');
+              </script>";
+        return false;
+    }
+
+    // cek username sudah ada atau belum
+    $queryrow = "SELECT username FROM user WHERE username = '$username'";
+    $result = mysqli_query($koneksi, $queryrow);
+    if (mysqli_num_rows($result) == 1) {
+        echo "<script>
+                alert('username sudah terdaftar');
               </script>";
         return false;
     }
@@ -97,13 +124,6 @@ $result = mysqli_query($koneksi, $queryrow);
 
 mysqli_query($koneksi, $query);
 return mysqli_affected_rows($koneksi);
-
- if (mysqli_num_rows($result) ==1 ) {
-        echo "<script>
-                alert('username sudah terdaftar');
-              </script>";
-        return false;
-    }
 
 }
 
